@@ -2,7 +2,7 @@
 
 const bookings = [];
 
-const createBooking = function (flightNum, numPassengers, price) {
+const createBooking = function (flightNum, numPassengers = 1, price = 199) {
   const booking = {
     flightNum,
     numPassengers,
@@ -14,4 +14,7 @@ const createBooking = function (flightNum, numPassengers, price) {
 };
 
 createBooking(23, 45, 300);
+createBooking(23, 34, 300);
+createBooking(26, 34, 300);
+createBooking(26);
 console.log(bookings);
