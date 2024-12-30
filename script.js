@@ -46,24 +46,25 @@
 
 const oneWord = function (str) {
   return str.replace(/ /g, '').toLowerCase();
-  // return str.trim().toLowerCase();
 };
-
-// console.log(oneWord('I am the best at writing Codes'));
 
 const upperFirstWord = function (str) {
   const [firstWord, ...others] = str.split(' ');
   return [firstWord.toUpperCase(), ...others].join(' ');
 };
 
-console.log(upperFirstWord('JavaScript is the best!'));
-
 //Higher-order function
 const transformer = function (str, fn) {
-  console.log(`transformed string: ${fn(str)}`);
+  console.log(`Original string: ${str}`);
+  console.log(`Transformed string: ${fn(str)}`);
   console.log(`Transformed by: ${fn.name}`);
 };
 
 transformer('JavaScript is the best programming language!', oneWord);
+// transformer('JavaScript is the best programming language!', upperFirstWord);
 
-// console.log(upperFirstWord.name);
+const high5 = function () {
+  console.log('🖐️');
+};
+
+document.body.addEventListener('click', high5);
