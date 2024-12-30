@@ -53,6 +53,14 @@ const oneWord = function (str) {
 
 const upperFirstWord = function (str) {
   const [firstWord, ...others] = str.split(' ');
-
   return [firstWord.toUpperCase(), ...others].join(' ');
 };
+
+console.log(upperFirstWord('JavaScript is the best!'));
+
+//Higher-order function
+const transformer = function (str, fn) {
+  console.log(`transformed string: ${fn(str)}`);
+};
+
+transformer('javaScript is the best programming language!', upperFirstWord);
