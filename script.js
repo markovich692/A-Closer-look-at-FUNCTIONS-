@@ -61,6 +61,9 @@ console.log(upperFirstWord('JavaScript is the best!'));
 //Higher-order function
 const transformer = function (str, fn) {
   console.log(`transformed string: ${fn(str)}`);
+  console.log(`Transformed by: ${fn.name}`);
 };
 
-transformer('javaScript is the best programming language!', upperFirstWord);
+transformer('JavaScript is the best programming language!', oneWord);
+
+// console.log(upperFirstWord.name);
