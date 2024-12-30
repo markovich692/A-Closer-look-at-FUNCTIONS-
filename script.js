@@ -46,4 +46,13 @@
 
 const oneWord = function (str) {
   return str.replace(/ /g, '').toLowerCase();
+  // return str.trim().toLowerCase();
+};
+
+// console.log(oneWord('I am the best at writing Codes'));
+
+const upperFirstWord = function (str) {
+  const [firstWord, ...others] = str.split(' ');
+
+  return [firstWord.toUpperCase(), ...others].join(' ');
 };
