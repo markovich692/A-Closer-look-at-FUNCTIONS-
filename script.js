@@ -103,7 +103,6 @@ const lufthansa = {
 
 lufthansa.book(567898, 'Marc');
 lufthansa.book(567774, 'Dave');
-console.log(lufthansa.bookings);
 
 const eurowings = {
   airline: 'Eurowings',
@@ -111,10 +110,8 @@ const eurowings = {
   bookings: [],
 };
 
-// eurowings.book = lufthansa.book;
-
 const book = lufthansa.book;
 
-eurowings.book('12345', 'James');
+book.call(eurowings, 345345, 'James');
 
-// booki(67668686, 'James');
+console.log(lufthansa, eurowings);
