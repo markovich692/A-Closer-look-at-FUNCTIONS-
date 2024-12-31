@@ -71,11 +71,28 @@
 
 //functions that return functions
 
-const greet = function (greeting) {
-  return function (name) {
-    console.log(`${greeting} ${name}`);
-  };
-};
+// const greet = function (greeting) {
+//   return function (name) {
+//     console.log(`${greeting} ${name}`);
+//   };
+// };
 
-const salute = greet('hi');
-salute('Albert');
+// const greet = greeting => {
+//   return name => {
+//     console.log(`${greeting} ${name}`);
+//   };
+// };
+
+// const salute = greet('hi');
+// salute('Albert');
+
+const lufthansa = {
+  airline: 'lufthansa',
+  iataCode: 'LH',
+  bookings: [],
+  book(flightNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airline}, flight ${this.iataCode}${flightNum} `
+    );
+  },
+};
