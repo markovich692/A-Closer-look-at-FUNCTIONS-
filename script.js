@@ -104,3 +104,17 @@ const lufthansa = {
 lufthansa.book(567898, 'Marc');
 lufthansa.book(567774, 'Dave');
 console.log(lufthansa.bookings);
+
+const eurowings = {
+  airline: 'Eurowings',
+  iataCode: 'EW',
+  bookings: [],
+};
+
+// eurowings.book = lufthansa.book;
+
+const book = lufthansa.book;
+
+eurowings.book('12345', 'James');
+
+// booki(67668686, 'James');
