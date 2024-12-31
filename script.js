@@ -94,5 +94,13 @@ const lufthansa = {
     console.log(
       `${name} booked a seat on ${this.airline}, flight ${this.iataCode}${flightNum} `
     );
+    this.bookings.push({
+      flight: `${this.iataCode}${flightNum}`,
+      name,
+    });
   },
 };
+
+lufthansa.book(567898, 'Marc');
+lufthansa.book(567774, 'Dave');
+console.log(lufthansa.bookings);
