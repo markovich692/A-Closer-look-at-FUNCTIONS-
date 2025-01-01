@@ -116,4 +116,19 @@ const book = function (flightNum, name) {
 // const bookEw = book.bind(lufthansa);
 // book.bind(eurowings)(555555, 'Bob');
 
-const bookEW23 = book.bind(lufthansa, 23);
+// const bookEW23 = book.bind(lufthansa, 23);
+
+lufthansa.planes = 300;
+
+lufthansa.buyPlane = function () {
+  console.log(this);
+  this.planes++;
+  console.log(this.planes);
+};
+
+// document.querySelector('.buy').addEventListener('click', lufthansa.buyPlane);
+document
+  .querySelector('.buy')
+  .addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
+
+// console.log(lufthansa);
