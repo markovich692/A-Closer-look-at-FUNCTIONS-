@@ -90,19 +90,7 @@ const lufthansa = {
   airline: 'lufthansa',
   iataCode: 'LH',
   bookings: [],
-  book(flightNum, name) {
-    console.log(
-      `${name} booked a seat on ${this.airline}, flight ${this.iataCode}${flightNum} `
-    );
-    this.bookings.push({
-      flight: `${this.iataCode}${flightNum}`,
-      name,
-    });
-  },
 };
-
-lufthansa.book(567898, 'Marc');
-lufthansa.book(567774, 'Dave');
 
 const eurowings = {
   airline: 'Eurowings',
@@ -110,8 +98,19 @@ const eurowings = {
   bookings: [],
 };
 
-const book = lufthansa.book;
+const book = function (flightNum, name) {
+  console.log(
+    `${name} booked a seat on ${this.airline}, flight ${this.iataCode}${flightNum} `
+  );
+  this.bookings.push({
+    flight: `${this.iataCode}${flightNum}`,
+    name,
+  });
+};
 
-book.call(eurowings, 345345, 'James');
+// book.call(lufthansa, 345335, 'James');
+// book.call(lufthansa, 346666, 'Bob');
+// book.call(eurowings, 345345, 'Edwards');
 
-console.log(lufthansa, eurowings);
+//Using the bind method
+const bookEw = book.bind(lufthansa);
