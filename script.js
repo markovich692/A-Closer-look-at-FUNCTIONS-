@@ -113,4 +113,7 @@ const book = function (flightNum, name) {
 // book.call(eurowings, 345345, 'Edwards');
 
 //Using the bind method
-const bookEw = book.bind(lufthansa);
+// const bookEw = book.bind(lufthansa);
+// book.bind(eurowings)(555555, 'Bob');
+
+const bookEW23 = book.bind(lufthansa, 23);
