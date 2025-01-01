@@ -180,11 +180,13 @@ const poll = {
   options: ['0: JavaScript', '1: Python', '2: Rust', '3: C++'],
 
   registerNewAnswer() {
-    const answer = prompt(`${this.question}
+    const answer = Number(
+      prompt(`${this.question}
       ${this.options[0]}
       ${this.options[1]}
       ${this.options[2]}
-      ${this.options[3]}`);
+      ${this.options[3]}`)
+    );
   },
 };
 
