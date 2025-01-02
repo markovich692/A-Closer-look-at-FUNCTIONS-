@@ -180,4 +180,27 @@ const poll = {
   options: ['0: JavaScript', '1: Python', '2: Rust', '3: C++'],
   // This generates [0, 0, 0, 0]. More in the next section!
   answers: new Array(4).fill(0),
+
+  registerNewAnswer() {
+    const answer = Number(
+      prompt(`${this.question}
+ ${this.options[0]}
+ ${this.options[1]}
+ ${this.options[2]}
+ ${this.options[3]}
+  `)
+    );
+
+    console.log(this.answers);
+
+    if (answer >= 0 && answer <= this.answers.length) {
+      this.answers[answer]++;
+    } else {
+      alert('Wrong input');
+    }
+  },
 };
+
+poll.registerNewAnswer();
+
+console.log(poll);
