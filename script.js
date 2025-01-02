@@ -268,6 +268,19 @@
 // Data1:[5,2,3]
 // Data2:[1,5,3,9,6,1]
 
-(function () {
-  console.log('This will not be called again');
-})();
+// (function () {
+//   console.log('This will not be called again');
+// })();
+
+const secureBooking = function () {
+  let passengerCount = 0;
+
+  return function () {
+    console.log(`${passengerCount++} passengers`);
+  };
+};
+
+const booker = secureBooking();
+booker();
+booker();
+booker();
