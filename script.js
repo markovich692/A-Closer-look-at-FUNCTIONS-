@@ -227,7 +227,6 @@ const poll = {
   // This generates [0, 0, 0, 0]. More in the next section!
   answers: new Array(4).fill(0),
 
-  /////////////////////////////////
   registerNewAnswer() {
     const answer = Number(
       prompt(`${this.question}
@@ -249,8 +248,6 @@ const poll = {
     this.displayResults.call(poll);
   },
 
-  /////////////////////////////////
-
   displayResults(type = 'array') {
     if (type === 'array') {
       console.log(this.answers);
@@ -264,3 +261,9 @@ const poll = {
 document
   .querySelector('.poll')
   .addEventListener('click', poll.registerNewAnswer.bind(poll));
+
+poll.displayResults.call({ answers: [5, 2, 3] });
+poll.displayResults.call({ answers: [1, 5, 3, 9, 6, 1] }, 'string');
+
+// Data1:[5,2,3]
+// Data2:[1,5,3,9,6,1]
