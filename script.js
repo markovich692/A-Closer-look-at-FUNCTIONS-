@@ -199,9 +199,24 @@ const poll = {
     } else {
       alert('Wrong input');
     }
+
+    this.displayResults.call(poll, this.answers);
+  },
+
+  displayResults(type) {
+    const [position0, position1, position2, position3] = this.answers;
+
+    if (typeof type === 'array') {
+      console.log(`${type}`);
+    } else {
+      console.log(
+        `Poll results are ${position0}, ${position1}, ${position2}, ${position3}`
+      );
+    }
   },
 };
 
+//Calls the registerNewAnswer method
 document
   .querySelector('.poll')
   .addEventListener('click', poll.registerNewAnswer.bind(poll));
