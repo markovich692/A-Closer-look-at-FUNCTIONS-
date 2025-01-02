@@ -191,16 +191,17 @@ const poll = {
   `)
     );
 
-    console.log(this.answers);
+    // console.log(this.answers);
 
     if (answer >= 0 && answer <= this.answers.length) {
       this.answers[answer]++;
+      console.log(this.answers);
     } else {
       alert('Wrong input');
     }
   },
 };
 
-poll.registerNewAnswer();
-
-console.log(poll);
+document
+  .querySelector('.poll')
+  .addEventListener('click', poll.registerNewAnswer.bind(poll));
