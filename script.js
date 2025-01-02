@@ -175,12 +175,59 @@
 // the 'string' option. Do not put the arrays in the poll object! So what should the this keyword
 // look like in this situation?
 
+// const poll = {
+//   question: 'What is your favourite programming language?',
+//   options: ['0: JavaScript', '1: Python', '2: Rust', '3: C++'],
+//   // This generates [0, 0, 0, 0]. More in the next section!
+//   answers: new Array(4).fill(0),
+
+//   registerNewAnswer() {
+//     const answer = Number(
+//       prompt(`${this.question}
+//  ${this.options[0]}
+//  ${this.options[1]}
+//  ${this.options[2]}
+//  ${this.options[3]}
+//   `)
+//     );
+
+//     // console.log(this.answers);
+
+//     if (answer >= 0 && answer <= this.answers.length) {
+//       this.answers[answer]++;
+//       console.log(this.answers);
+//     } else {
+//       alert('Wrong input');
+//     }
+
+//     this.displayResults.call(poll, this.answers);
+//   },
+
+//   displayResults(type) {
+//     const [position0, position1, position2, position3] = this.answers;
+
+//     if (typeof type === 'array') {
+//       console.log(`${type}`);
+//     } else {
+//       console.log(
+//         `Poll results are ${position0}, ${position1}, ${position2}, ${position3}`
+//       );
+//     }
+//   },
+// };
+
+// //Calls the registerNewAnswer method
+// document
+//   .querySelector('.poll')
+//   .addEventListener('click', poll.registerNewAnswer.bind(poll));
+
 const poll = {
   question: 'What is your favourite programming language?',
   options: ['0: JavaScript', '1: Python', '2: Rust', '3: C++'],
   // This generates [0, 0, 0, 0]. More in the next section!
   answers: new Array(4).fill(0),
 
+  /////////////////////////////////
   registerNewAnswer() {
     const answer = Number(
       prompt(`${this.question}
@@ -191,27 +238,24 @@ const poll = {
   `)
     );
 
-    // console.log(this.answers);
-
     if (answer >= 0 && answer <= this.answers.length) {
       this.answers[answer]++;
-      console.log(this.answers);
+      // console.log(this.answers);
     } else {
       alert('Wrong input');
     }
 
-    this.displayResults.call(poll, this.answers);
+    // this.displayResults.call(poll,this.answers);
+    this.displayResults.call(poll);
   },
 
-  displayResults(type) {
-    const [position0, position1, position2, position3] = this.answers;
+  /////////////////////////////////
 
-    if (typeof type === 'array') {
-      console.log(`${type}`);
-    } else {
-      console.log(
-        `Poll results are ${position0}, ${position1}, ${position2}, ${position3}`
-      );
+  displayResults(type = 'array') {
+    if (type === 'array') {
+      console.log(this.answers);
+    } else if (type === 'string') {
+      console.log(`Poll results are ${this.answers.join(', ')}`);
     }
   },
 };
