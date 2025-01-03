@@ -272,15 +272,15 @@
 //   console.log('This will not be called again');
 // })();
 
-const secureBooking = function () {
-  let passengerCount = 0;
+// const secureBooking = function () {
+//   let passengerCount = 0;
 
-  return function () {
-    console.log(`${passengerCount++} passengers`);
-  };
-};
+//   return function () {
+//     console.log(`${passengerCount++} passengers`);
+//   };
+// };
 
-const booker = secureBooking();
-booker();
-booker();
-booker();
+// const booker = secureBooking();
+// booker();
+// booker();
+// booker();
